@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Catálogo de coches"
+        android:textColor="@color/azul_coche"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- height 0dp + weight 1: ocupa el espacio sobrante y el botón no se solapa -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCoches"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnVolverInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/azul_coche"
+        android:text="Volver al inicio"
+        android:textColor="@color/blanco" />
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/ivDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/blanco"
+            android:contentDescription="Imagen del coche"
+            android:padding="16dp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tvDetalleMarcaModelo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/azul_coche"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDetalleAnio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/texto_gris"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDetallePrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/texto_oscuro"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDetalleDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/texto_oscuro"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnVolverCatalogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/azul_coche"
+            android:text="Volver al catálogo"
+            android:textColor="@color/blanco" />
+    </LinearLayout>
+</ScrollView>

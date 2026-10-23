@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fondo">#F5F7FA</color>
+    <color name="azul_coche">#1565C0</color>
+    <color name="texto_oscuro">#212121</color>
+    <color name="texto_gris">#616161</color>
+    <color name="blanco">#FFFFFF</color>
+</resources>
