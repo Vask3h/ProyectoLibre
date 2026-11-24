@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import java.util.Locale
 
 class DetalleCocheActivity : AppCompatActivity() {
@@ -21,17 +22,27 @@ class DetalleCocheActivity : AppCompatActivity() {
         val descripcion = intent.getStringExtra("descripcion") ?: ""
         val imagenResId = intent.getIntExtra("imagenResId", R.drawable.ic_coche)
         val fotoPath = intent.getStringExtra("fotoPath")
+        val imageUrl = intent.getStringExtra("imageUrl")
         val tieneUbicacion = intent.getBooleanExtra("tieneUbicacion", false)
         val latitud = intent.getDoubleExtra("latitud", 0.0)
         val longitud = intent.getDoubleExtra("longitud", 0.0)
 
         // Mostramos los datos en pantalla
         val ivDetalle = findViewById<ImageView>(R.id.ivDetalle)
-        val bitmap = Fotos.cargar(fotoPath)
-        if (bitmap != null) {
-            ivDetalle.setImageBitmap(bitmap)
+
+        if (!imageUrl.isNullOrEmpty()) {
+            Glide.with(this)
+                .load(imageUrl)
+                .placeholder(R.drawable.ic_coche)
+                .error(R.drawable.ic_coche)
+                .into(ivDetalle)
         } else {
-            ivDetalle.setImageResource(imagenResId)
+            val bitmap = Fotos.cargar(fotoPath)
+            if (bitmap != null) {
+                ivDetalle.setImageBitmap(bitmap)
+            } else {
+                ivDetalle.setImageResource(imagenResId)
+            }
         }
 
         findViewById<TextView>(R.id.tvDetalleMarcaModelo).text = "$marca $modelo"

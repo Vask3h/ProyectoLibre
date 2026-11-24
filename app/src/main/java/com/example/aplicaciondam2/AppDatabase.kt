@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
  * Base de datos principal de la aplicación utilizando Room.
  * Mantiene la tabla "coches" y proporciona acceso a CocheDao.
  */
-@Database(entities = [Coche::class], version = 2, exportSchema = false)
+@Database(entities = [Coche::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun cocheDao(): CocheDao

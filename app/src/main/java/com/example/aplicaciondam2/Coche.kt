@@ -15,5 +15,7 @@ data class Coche(
     val imagenResId: Int = R.drawable.ic_coche,
     val fotoPath: String? = null,
     val latitud: Double? = null,
-    val longitud: Double? = null
+    val longitud: Double? = null,
+    val esOnline: Boolean = false,
+    val imageUrl: String? = null
 )

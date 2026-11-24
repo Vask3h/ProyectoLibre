@@ -9,13 +9,86 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:text="Catálogo de coches"
         android:textColor="@color/azul_coche"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <!-- height 0dp + weight 1: ocupa el espacio sobrante y el botón no se solapa -->
+    <!-- Selector de modo Local u Online -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnModoLocal"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="Mis Coches (Local)"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnModoOnline"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="Catálogo API Online"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Selector de marca (Solo visible en modo Online) -->
+    <LinearLayout
+        android:id="@+id/layoutSelectorMarca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Marca:"
+            android:textColor="@color/texto_oscuro"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spMarcas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Banner / Mensaje de Estado / Error -->
+    <TextView
+        android:id="@+id/tvEstadoError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#FFF3CD"
+        android:padding="8dp"
+        android:textColor="#856404"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <!-- Indicador de Carga ProgressBar -->
+    <ProgressBar
+        android:id="@+id/pbCargando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCoches"
         android:layout_width="match_parent"

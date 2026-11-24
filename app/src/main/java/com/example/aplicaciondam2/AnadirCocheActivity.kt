@@ -90,6 +90,12 @@ class AnadirCocheActivity : AppCompatActivity() {
         ivFoto = findViewById(R.id.ivFoto)
         tvUbicacion = findViewById(R.id.tvUbicacion)
 
+        // Precompletar si venimos de importar un modelo online
+        val marcaPredefinida = intent.getStringExtra("marcaPredefinida")
+        val modeloPredefinido = intent.getStringExtra("modeloPredefinido")
+        if (!marcaPredefinida.isNullOrEmpty()) etMarca.setText(marcaPredefinida)
+        if (!modeloPredefinido.isNullOrEmpty()) etModelo.setText(modeloPredefinido)
+
         val btnFoto: Button = findViewById(R.id.btnFoto)
         val btnGaleria: Button = findViewById(R.id.btnGaleria)
         val btnUbicacion: Button = findViewById(R.id.btnUbicacion)

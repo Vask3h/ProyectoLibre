@@ -1,0 +1,23 @@
+# Tareas de Implementación - Proyecto V2 (Concesionario Conectado)
+
+- [x] **Configuración y Dependencias (Hito 1)**
+  - [x] Añadir dependencias de Retrofit 2, Gson y Glide en `gradle/libs.versions.toml` y `app/build.gradle.kts`
+  - [x] Añadir permisos de `INTERNET` y `ACCESS_NETWORK_STATE` en `AndroidManifest.xml`
+- [x] **Capa de Datos Remota API REST (Hito 1)**
+  - [x] Crear DTOs de respuesta de API `NhtsaModels.kt`
+  - [x] Crear interfaz de servicio Retrofit `ApiService.kt`
+  - [x] Crear cliente Singleton `RetrofitClient.kt`
+- [x] **Capa de Datos Local y Repositorio (Hito 2)**
+  - [x] Actualizar entidad `Coche.kt` con campos `esOnline` e `imageUrl`
+  - [x] Actualizar `CocheDao.kt` con soporte para reemplazo en inserción y búsquedas
+  - [x] Implementar `CocheRepository.kt` con estrategia unificada Red + Caché Room para modo offline
+- [x] **Capa de Presentación y ViewModel (Hito 3)**
+  - [x] Crear `CatalogoViewModel.kt` para gestión de estados de UI (`Cargando`, `Exito`, `Error`, `SinConexion`)
+  - [x] Actualizar `CocheAdapter.kt` para cargar imágenes con Glide
+  - [x] Actualizar `activity_catalogo.xml` con filtro por marca, `ProgressBar` y estados de error
+  - [x] Actualizar `CatalogoActivity.kt` con integración de ViewModel, filtro online y modo offline
+- [x] **Mejora Propia - Importador al Concesionario (Hito 3)**
+  - [x] Permitir importar modelo del catálogo online hacia el formulario de `AnadirCocheActivity` autocompletando datos y añadiendo foto + GPS
+- [x] **Verificación y Build**
+  - [x] Compilación con Gradle (`app:assembleDebug`)
+  - [x] Comprobar funcionamiento offline y manejo de errores
