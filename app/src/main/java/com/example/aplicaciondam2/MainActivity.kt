@@ -5,14 +5,19 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var tvResumen: TextView
+    private lateinit var cocheDao: CocheDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        cocheDao = AppDatabase.obtener(this).cocheDao()
 
         // Enlazamos las vistas del XML
         tvResumen = findViewById(R.id.tvResumen)
@@ -33,6 +38,9 @@ class MainActivity : AppCompatActivity() {
     // Se ejecuta cada vez que la pantalla vuelve a ser visible
     override fun onResume() {
         super.onResume()
-        tvResumen.text = "Coches registrados: ${CocheRepository.total()}"
+        lifecycleScope.launch {
+            val total = cocheDao.contar()
+            tvResumen.text = "Coches registrados: $total"
+        }
     }
 }

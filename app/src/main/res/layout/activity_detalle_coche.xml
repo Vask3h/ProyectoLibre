@@ -54,6 +54,14 @@
             android:textColor="@color/texto_oscuro"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/tvDetalleUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/texto_gris"
+            android:textSize="14sp" />
+
         <Button
             android:id="@+id/btnVolverCatalogo"
             android:layout_width="match_parent"
